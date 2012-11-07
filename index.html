@@ -12,7 +12,8 @@
 <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.1.8.min.js"></script>
 <script src="js/library.js" type="text/javascript"></script>
 </head> 
-<body onLoad="load()">
+<body onLoad="libamongfriends()"> 
+
 <!-- Library among Friends app Interface -->
 
 
@@ -26,7 +27,7 @@
       </div>
 		<ul data-role="listview">
 			<li><a href="#addproduct">Add Product</a></li>
-            <li><a href="#page3">My Library</a></li>
+            <li><a href="#mylib">My Library</a></li>
 			<li><a href="#login">Log in</a></li>
 		</ul>		
 	</div>
@@ -38,51 +39,66 @@
 	</div>
 </div>
 
+	<div data-role="footer">
+		<h4>Library Among Friends</h4>
+	</div>
+</div>
+
 
 <div data-role="page" id="addproduct">
 	<div data-role="header">
 		<h1>Add Product</h1>
 	</div>
 	<div data-role="content">	
-	    <div id="createEvent">
-			<div data-role="fieldcontain" class="ui-hide-label">
-			<input type="text" name="newCreator" id="newCreator" value="" placeholder="Your Name / Event Creator" />
-			<input type="text" name="newEvent" id="newEvent" value="" placeholder="Event Name" />
-			<a href="" data-role="button" data-icon="plus"  onClick="newEvent()">Create Event</a>
-		</div>
+	<header id="header"></header>
+	<div class="addProduct">
+	<!--<div id="addProduct"> -->
+	<form class="addProduct-form">
+		<h2>Add Product</h2>
+		<div class="error" style="display:none"></div>
+		<input type="text" id="productName" value="" placeholder="Product Name  (e.g. Halo 1)" />
+		<input type="text" id="productType" value="" placeholder="Product Type  (e.g. Game, Book, Movie)" />
+		<button id= "addproductbutton">Add Product</button>
+	</form>
    </div>
 	
-		Content		
 	</div>
 	<div data-role="footer">
 		<h4>Library Among Friends</h4>
 	</div>
 </div>
 
-<div data-role="page" id="page3">
+<div data-role="page" id="mylib">
 	<div data-role="header" >
 		<h1>My Library</h1>
 	</div>
-	<div data-role="content">	
-		<ul data-role="listview" data-filter="true">
+	
+    
+    <div data-role="content">
+			<ul id="category_list" data-role="listview"></ul>
+	</div>
+    
+    
+    	
+		<!--<ul data-role="listview" data-filter="true">
 			<li>
             <a href="#">
-            <img src="images/form-check-on.png" alt="Australia">
+            <img src="file:///C|/Users/Asmaa Aljuhani/NU Master/EECS 394 Agile/trails/images/form-check-on.png" alt="Australia">
             Page Two
             </a>
             </li>
             <li><a href="#">Page Three</a></li>
 			<li><a href="#">Page Four</a></li>
-		</ul>		
+		</ul>	
 	</div>
     
-        <div data-role="navbar" >
+        <!--<div data-role="navbar" >
 	<ul>
 		<li><a href="a.html" class="ui-btn-active ui-state-persist">Mine</a></li>
 		<li><a href="b.html">Borrowing</a></li>
         <li><a herf="#">Lending</a></li>
 	</ul>
-</div>
+</div>-->
     
 	<div data-role="footer">
 		<h4>Library Among Friends</h4>
@@ -101,7 +117,7 @@
           <div class="error" style="display:none"></div>
           <input type="text" id="login-username" placeholder="Username" />
           <input type="password" id="login-password" placeholder="Password" />
-          <button onclick = "login()">Log In</button>
+          <button id= "loginbutton">Log In</button>
         </form>
 
         <form class="signup-form">
@@ -109,7 +125,7 @@
           <div class="error" style="display:none"></div>
           <input type="text" id="signup-username" placeholder="Username" />
           <input type="password" id="signup-password" placeholder="Create a Password" />
-          <button onclick = "signup()">Sign Up</button>
+          <button id = "signupbutton">Sign Up</button>
         </form>
       </div>	
 	</div>
